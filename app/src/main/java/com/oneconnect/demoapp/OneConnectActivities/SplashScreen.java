@@ -50,7 +50,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 try {
                     OneConnect oneConnect = new OneConnect();
-                    oneConnect.initialize(SplashScreen.this, "oTUDEq.susHlRkDDSSmGd1ODH0QihV0ZWnq96t1cTkYTSYcsG."); // Put Your OneConnect API Key for Work Server
+                    oneConnect.initialize(SplashScreen.this, "RSJ8BJMG4RjMQbkoZQROoPPn.9sBdWn2N5DSeoJjrUWE1MAL8Q."); // Put Your OneConnect API Key for Work Server
                     try {
                         Constants.FREE_SERVERS = oneConnect.fetch(true);
                         Constants.PREMIUM_SERVERS = oneConnect.fetch(false);
