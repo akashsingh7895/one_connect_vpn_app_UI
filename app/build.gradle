@@ -9,7 +9,7 @@ ext {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     packagingOptions {
         pickFirst '**/*.so'
@@ -19,9 +19,9 @@ android {
         configurations.all {
             resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
         }
-        applicationId 'com.oneconnect.demoapp'
+        applicationId 'com.oneconnect.avssolution'
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
@@ -73,6 +73,7 @@ dependencies {
     implementation 'com.github.oneconnectapi:OneConnectLib:v1.1.0'
     // OneConnect Implementation
 
+    //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.annotation:annotation:1.2.0'
@@ -105,8 +106,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.infideap.drawerbehavior:drawer-behavior:1.0.4'
     implementation 'com.intuit.sdp:sdp-android:1.0.4'
-    implementation 'com.jakewharton:butterknife:10.2.3'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+//    implementation 'com.jakewharton:butterknife:10.2.3'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    
     def work_version = "2.7.0"
     implementation "androidx.work:work-runtime:$work_version"
     implementation "androidx.work:work-runtime-ktx:$work_version"
@@ -138,5 +141,10 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     testImplementation 'junit:junit:4.12'
+
+
+    implementation 'com.google.android.material:material:1.4.0'
+
+
 
 }

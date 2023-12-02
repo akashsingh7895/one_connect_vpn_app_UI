@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B3942">
+   >
 
     <RelativeLayout
         android:id="@+id/animation_layout"
@@ -17,24 +17,21 @@
             android:id="@+id/loading_view"
             android:layout_width="200dp"
             android:layout_height="120dp"
-            android:layout_marginTop="-5dp"
-            android:visibility="visible"
-            android:layout_marginBottom="-5dp"
-            android:layout_centerHorizontal="true"
-            app:lottie_rawRes="@raw/server_loading"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true"
             android:layout_centerInParent="true"
-            />
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/server_loading" />
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/region_recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="visible"
-        android:layout_marginVertical="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

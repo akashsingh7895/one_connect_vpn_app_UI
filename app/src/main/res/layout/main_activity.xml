@@ -1,50 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/dl"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+   >
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+      >
+
+        <ImageView
+            android:id="@+id/bglayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/bglayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/main_bg"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingBottom="30dp">
 
-
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:background="@color/white"
+                    android:elevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/icon_tool"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/baseline_menu_24"
+                        app:tint="@color/light_color" />
+
+                    <TextView
+                        android:id="@+id/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="40dp"
+                        android:text="App Name"
+                        android:fontFamily="@font/letin_bold"
+                        android:textColor="@color/light_color"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="@string/app_name"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status : "
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/txt_grey"
+                        android:textSize="@dimen/_18sdp"
+                        android:fontFamily="@font/letin_bold"/>
+
+                    <TextView
+                        android:id="@+id/status_connected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dissconnect"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:textColor="@color/txt_grey"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/letin_bold"/>
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/ip_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ip : Loading..."
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/light_color"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/letin_bold"/>
 
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btnConnect"
+                    android:layout_width="190dp"
+                    android:layout_height="190dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="100dp"
+                    app:lottie_autoPlay="true">
+
+
+
+
+                    <LinearLayout
+                        android:id="@+id/power_btn1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:elevation="10dp"
+                        android:background="@drawable/primery_round_conners"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" >
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:tint="@color/white"
+                            android:layout_gravity="center"
+                            android:src="@drawable/p1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap to Connect"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/power_btn2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:elevation="10dp"
+                        android:background="@drawable/primery_round_conners"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" >
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:tint="@color/white"
+                            android:layout_gravity="center"
+                            android:src="@drawable/p2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Connected"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13sdp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            />
+
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvConnectionStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/disconnected"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/connection_state_off"
+                            app:layout_constraintEnd_toEndOf="@+id/connection_state_off"
+                            app:layout_constraintStart_toStartOf="@+id/connection_state_off"
+                            app:layout_constraintTop_toTopOf="@+id/connection_state_off" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animation_view"
+                            android:layout_width="100sp"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toTopOf="@+id/connection_state_off"
+                            app:layout_constraintEnd_toEndOf="@+id/connection_state_off"
+                            app:layout_constraintStart_toStartOf="@+id/connection_state_off"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/main_load" />
+
+                        <TextView
+                            android:id="@+id/connection_state_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_baseline_signal_cellular_alt_24_off"
+                            android:drawablePadding="5dp"
+                            android:gravity="bottom"
+                            android:text="@string/disconnected"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/connection_state_on"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_baseline_signal_cellular_alt_24"
+                            android:drawablePadding="5dp"
+                            android:gravity="bottom"
+                            android:text="@string/connected"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/connection_state_off"
+                            app:layout_constraintStart_toStartOf="@+id/connection_state_off"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnOpenServerList"
-                    android:layout_width="280dp"
+                    android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/white_rounded_bg"
+                    android:layout_marginTop="20dp"
+                    android:visibility="visible"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:background="@drawable/dark_white_conners"
                     android:orientation="horizontal"
                     android:padding="8dp">
 
@@ -64,8 +298,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:text="Select Country"
-                        android:textColor="@color/white"
+                        android:textColor="@color/light_color"
                         android:textSize="17dp"
+                        android:fontFamily="@font/letin_medimum"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/flag_image"
                         app:layout_constraintTop_toTopOf="parent"
@@ -77,217 +312,226 @@
                         android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:tint="@color/white"
                         android:src="@drawable/ic_drop_down"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/light_color" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btnConnect"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp">
+                    android:layout_marginBottom="17dp"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:hint="00:00:00"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <View
-                        android:id="@+id/view3"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:background="@drawable/connect_btn3"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/view2"
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        android:background="@drawable/connect_btn2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:background="@drawable/connect_btn1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tv_timer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="17dp"
-                        android:gravity="center"
-                        android:hint="00:00:00"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/connect_btn"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/ic_baseline_power_settings_new_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/connect_btn2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="3dp"
-                        android:background="@drawable/ic_baseline_power_settings_new_24"
-                        android:visibility="invisible"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_timer" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <Button
+                    android:id="@+id/btn_next_activity"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp">
+                    android:visibility="gone"
+                    android:layout_height="@dimen/_40sdp" />
+
+
+                <LinearLayout
+                    android:id="@+id/speed_layout"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_height="@dimen/_80sdp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:layout_marginEnd="150dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/dark_white_conners"
+                        >
+
 
                         <TextView
-                            android:id="@+id/tvConnectionStatus"
+                            android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/disconnected"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:visibility="gone"
-                            android:layout_marginTop="4dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/animation_view"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="Download"
+                            android:textColor="@color/txt_grey"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/animation_view"
-                            android:layout_width="50dp"
-                            android:layout_height="0dp"
-                            android:visibility="gone"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/baseline_download_24"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/main_load" />
+                            android:layout_marginRight="@dimen/_12sdp"
+                            app:layout_constraintTop_toTopOf="@+id/textView"
+                            app:tint="@color/txt_grey" />
+
 
                         <TextView
-                            android:id="@+id/connection_state_off"
+                            android:id="@+id/download_speed"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_baseline_signal_cellular_alt_24_off"
-                            android:drawablePadding="5dp"
-                            android:gravity="bottom"
-                            android:text="@string/disconnected"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:visibility="visible"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="465"
+                            android:textSize="@dimen/_20sdp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/_40sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
                         <TextView
-                            android:id="@+id/connection_state_on"
+                            android:id="@+id/download_unit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_baseline_signal_cellular_alt_24"
-                            android:drawablePadding="5dp"
-                            android:gravity="bottom"
-                            android:text="@string/connected"
-                            android:textColor="@color/white"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="mb/s"
+                            android:textSize="@dimen/_10sdp"
                             android:textStyle="bold"
-                            android:visibility="gone"
+                            android:layout_marginLeft="4dp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintStart_toEndOf="@+id/download_speed"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:background="@drawable/dark_white_conners"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="Upload"
+                            android:textColor="@color/txt_grey"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:src="@drawable/baseline_upload_24"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginRight="@dimen/_12sdp"
+                            app:layout_constraintTop_toTopOf="@+id/textView2"
+                            app:tint="@color/txt_grey" />
+
+
+                        <TextView
+                            android:id="@+id/upload_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="465"
+                            android:textSize="@dimen/_20sdp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/_40sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+                        <TextView
+                            android:id="@+id/upload_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/letin_bold"
+                            android:text="mb/s"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="4dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/upload_speed"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
 
             </LinearLayout>
-
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="@dimen/_18sdp"
-                android:text="Ads Can Place Here"/>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingHorizontal="10dp"
                 android:paddingVertical="15dp"
-                android:visibility="gone"
-                android:paddingHorizontal="10dp">
+                android:visibility="gone">
 
                 <com.facebook.ads.NativeAdLayout
                     android:id="@+id/native_ad_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:visibility="gone" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <RelativeLayout
                     android:id="@+id/fl_adplaceholder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@null"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_layout"
+        app:itemTextAppearance="@style/navLeftStyle"
+        app:menu="@menu/nav_left" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#2B3942</color>
+    <color name="primary">#ffffff</color>
+    <color name="light_color">#1C64BD</color>
+
     <color name="primary_dark">#2B3942</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
@@ -10,6 +12,7 @@
     <color name="splashscreencolor">#1d89e4</color>
     <color name="colorPrimary">#0d1543</color>
     <color name="colorPrimaryDark">#ffffff</color>
+    <color name="dark_white">#F7F1F1</color>
     <color name="tab_background_selected">#2499E0</color>
 
     <color name="txt_grey">#4e5457</color>

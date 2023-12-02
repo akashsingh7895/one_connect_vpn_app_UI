@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/toolbarold"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/lighterprimary"
+        android:background="@color/light_color"
         android:gravity="center_vertical"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextAppearance="@style/Toolbar.TitleText"
@@ -30,12 +31,12 @@
         android:background="@color/primary"
         android:minHeight="?actionBarSize"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorColor="@color/light_color"
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/white"
+        app:tabSelectedTextColor="@color/light_color"
         app:tabTextAppearance="@style/TabTextAppearance"
-        app:titleTextColor="@color/white"/>
+        app:titleTextColor="@color/primary"/>
 
 
 </RelativeLayout>
